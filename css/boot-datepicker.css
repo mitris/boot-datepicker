@@ -1,0 +1,67 @@
+input {
+  margin-bottom: 20px !important;
+}
+.boot-datepicker {
+  line-height: 0;
+}
+.boot-datepicker table {
+  display: inline-block;
+  margin: 7px;
+}
+.boot-datepicker table thead {
+  text-align: center;
+  line-height: 28px;
+  text-transform: capitalize;
+}
+.boot-datepicker table tbody td {
+  width: 28px;
+}
+.boot-datepicker.popover {
+  display: block;
+  max-width: none;
+}
+.boot-datepicker.popover.top-right .arrow,
+.boot-datepicker.popover.bottom-right .arrow {
+  left: 21px;
+}
+.boot-datepicker.popover.top-left .arrow,
+.boot-datepicker.popover.bottom-left .arrow {
+  left: auto;
+  right: 14px;
+}
+.boot-datepicker.popover.right-top .arrow,
+.boot-datepicker.popover.left-top .arrow {
+  top: auto;
+  bottom: 4px;
+}
+.boot-datepicker.popover.right-bottom .arrow,
+.boot-datepicker.popover.left-bottom .arrow {
+  top: 14px;
+}
+.boot-datepicker.popover .popover-content {
+  padding: 0;
+}
+.boot-datepicker.inline {
+  margin: 0 -7px;
+}
+.boot-datepicker.inline .popover-content {
+  padding: 0;
+}
+.boot-datepicker-1 .toolbar .btn-group {
+  width: 100%;
+}
+.boot-datepicker-1 .toolbar .btn-group button {
+  width: 50%;
+  font-size: 11.9px;
+  padding: 2px 10px;
+}
+.boot-datepicker-1 .toolbar .selected-date {
+  float: none;
+  width: 100%;
+  line-height: normal;
+  text-align: center;
+  font-size: inherit;
+}
+.boot-datepicker-1 .toolbar .btn-group + .selected-date {
+  margin-top: 10px;
+}
