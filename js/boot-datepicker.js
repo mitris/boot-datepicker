@@ -52,7 +52,6 @@
                         this.date.push(dateStr);
                     }
                 }
-                log(this.date)
             }
         },
         _generateView: function () {
@@ -211,7 +210,6 @@
             self.$element.on('change.boot-datepicker', function() {
                 self._processElementDate();
                 if (self.view.is(':visible')) {
-                    log('c');
                     self._generateView();
                 }
             });
