@@ -11,7 +11,7 @@ $(function() {
 });
 ```
 
-[Simple Demo](http://jsfiddle.net/e6wFQ/)
+[Simple Demo](http://jsfiddle.net/e6wFQ/4/)
 
 Dependencies
 -----------
