@@ -11,6 +11,8 @@ $(function() {
 });
 ```
 
+[Simple Demo](http://jsfiddle.net/e6wFQ/)
+
 Dependencies
 -----------
 1. jQuery
