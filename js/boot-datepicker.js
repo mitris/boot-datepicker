@@ -61,7 +61,16 @@
                     }
                 }
             } else if (this.$element.is('input, textarea')) {
-                var selectedDate = this.$element.val().split(this.options.dateDelimiter[this.options.mode]);
+                var selectedDate = [];
+                if(this.$element.val()) {
+                    selectedDate = this.$element.val().split(this.options.dateDelimiter[this.options.mode]);
+                } else {
+                    selectedDate.push(this.today.format(this._f));
+                    if(this.options.mode == 'range') {
+                        selectedDate.push(this.today.format(this._f));
+                    }
+                }
+
                 this.date = [];
                 for(var i = 0; i < selectedDate.length; i++) {
                     var dateStr = moment(selectedDate[i], this.options.dateFormat).startOf('day').format(this._f);
@@ -77,12 +86,10 @@
 //				subtract = this.options.calendarViews;
                 mode = 'subtract';
             } else if (this.minDate && !this.maxDate) {
-//				/************/
-//				var diff = this.startDate.diff(this.minDate, 'month'),
-//					floor = Math.floor(this.options.calendarViews / 2),
-//					mod = diff % this.options.calendarViews;
-//				subtract = diff >= this.options.calendarViews || mod >= floor ? floor : mod;
-//				/************/
+				var diff = this.startDate.diff(this.minDate, 'month'),
+					floor = Math.floor(this.options.calendarViews / 2),
+					mod = diff % this.options.calendarViews;
+				subtract = diff >= this.options.calendarViews || mod >= floor ? floor : mod;
             } else if (this.maxDate && !this.minDate) {
 //				if (this.maxDate.isBefore(this.startDate) || this.maxDate.isSame(this.startDate)) {
 //					this.startDate = this.maxDate.clone();
@@ -109,9 +116,10 @@
             var calendarFirst = this.view.find('table:first'),
                 calendarLast = this.view.find('table:last'),
                 calendarOther = this.view.find('table').not(calendarFirst).not(calendarLast);
-            if(calendarFirst.not(calendarLast)) {
+            if(!calendarFirst.is(calendarLast)) {
                 calendarFirst.find('[data-boot-handler=next]').closest('td').remove();
                 calendarFirst.find('[data-boot-handler=current]').closest('td').attr('colspan', 6);
+
                 calendarLast.find('[data-boot-handler=previous]').closest('td').remove();
                 calendarLast.find('[data-boot-handler=current]').closest('td').attr('colspan', 6);
             }
@@ -439,7 +447,7 @@
         calendarViews: 3, // 3
         mode: 'range', // single|multiple|range
         language: 'en',
-        inline: true,
+        inline: false,
         extendedMonth: true,
         hideOnSelect: true,
         hideOnSelectDelay: 300,
