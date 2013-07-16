@@ -3,8 +3,6 @@
     "version": "1.0.0",
     "main": ["js/boot-datepicker.js", "css/boot-datepicker.css"],
     "dependencies": {
-        "jquery": "~1.9.1",
-        "bootstrap": "~2.3.2",
         "moment": "~2.0.0"
     }
 }
